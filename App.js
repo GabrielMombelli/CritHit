@@ -17,8 +17,12 @@ export default function App() {
   const [ultimoDado, setUltimoDado] = useState(0);
   const [idSelecionado, setIdSelecionado] = useState(null);
 
-  const rolarDado = (lados) => {
-    setUltimoDado(Math.floor(Math.random() * lados) + 1);
+  const rolarDado = (quantidade, lados) => {
+    let soma = 0;
+    for (let i = 0; i < quantidade; i++) {
+      soma += Math.floor(Math.random() * lados) + 1;
+    }
+    setUltimoDado(soma);
   };
 
   const aplicarModificadorVida = (tipo) => {
